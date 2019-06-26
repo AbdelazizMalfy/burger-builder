@@ -22,7 +22,7 @@ function BuildControls(props) {
                 removed={() => props.ingredientRemoved(ctrl.type)} 
                 />
             ))}
-            <button className='OrderButton'> ORDER NOW</button>
+            <button className='OrderButton' onClick={props.ordered}> ORDER NOW</button>
         </div>
     )
 }

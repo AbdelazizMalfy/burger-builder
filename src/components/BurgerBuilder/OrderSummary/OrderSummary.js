@@ -16,7 +16,7 @@ function OrderSummary(props) {
             <ul>
                 {ingredientSummary}
             </ul>
-            <p>Continue to CheckOut ?</p>
+            <p>Continue to Checkout ?</p>
         </div>
     )
 }

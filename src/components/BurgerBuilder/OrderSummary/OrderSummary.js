@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+
+import Button from '../../UI/Button/Button';
 
 function OrderSummary(props) {
     const ingredientSummary = Object.keys(props.ingredients)
@@ -17,6 +19,12 @@ function OrderSummary(props) {
                 {ingredientSummary}
             </ul>
             <p>Continue to Checkout ?</p>
+            <Button clicked={props.purchaseCancelled} btnType="Danger">
+                CANCEL
+            </Button>
+            <Button clicked={props.purchaseContinued} btnType="Success">
+                CONTINUE
+            </Button>
         </div>
     )
 }

@@ -8,9 +8,8 @@ import Logo from '../../Logo/Logo';
 function Toolbar(props) {
     return (
         <header className="Toolbar">
-            <div>MENU</div>
             <Logo height="80%"/>
-            <nav>
+            <nav className="DesktopOnly">
                 <NavItems />
             </nav>
         </header>

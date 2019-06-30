@@ -1,22 +1,24 @@
-import React from 'react'
+import React, {Component} from 'react'
 
 import './Layout.css';
 
 import Toolbar from '../Navigation/Toolbar/Toolbar';
-import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
 
-function Layout(props) {
-    return (
-        <div>    
-            <div>
-                <Toolbar />
-                <SideDrawer/>
+class Layout extends Component {
+
+    render (){
+        return(
+            <div>     
+                <div>
+                    <Toolbar />
+                    {/* <SideDrawer open={this.state.showSideDrawer} closed={this.sideDrawerClosedHandler}/> */}
+                </div>
+                <main className="content">
+                    {this.props.children}
+                </main>
             </div>
-            <main className="content">
-                {props.children}
-            </main>
-        </div>
-    )
+        )
+    }
 }
 
 export default Layout;

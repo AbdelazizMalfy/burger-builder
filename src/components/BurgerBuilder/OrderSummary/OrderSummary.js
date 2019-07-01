@@ -14,7 +14,7 @@ function OrderSummary(props) {
     return (
         <div>
             <h3>Your Order</h3>
-            <p>A tasty burger with the following ingredients:</p>
+            <p>Tasty burger with the following ingredients:</p>
             <ul>
                 {ingredientSummary}
             </ul>

@@ -19,18 +19,18 @@ const INGREDIENT_PRICES = {
 
 class BurgerBuilder extends Component {
     state = {
-         ingredients : {
-             salad: 0,
-             bacon: 0,
-             cheese:0,
-             meat:0
-         },
+         ingredients : {},
          totalPrice: 4,
          purchasing: false,
          loading: false
     }
 
-    
+    componentDidMount(){
+        axios.get('https://burger-builder-ea7e3.firebaseio.com/ingredients.json')
+            .then(response => {
+                this.setState({ingredients: response.data})
+            })
+    }
 
     addIngHandler = (type) =>{
         const oldCount = this.state.ingredients[type];

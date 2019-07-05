@@ -14,7 +14,7 @@ function Burger(props) {
         },[]);
     
     if ( ingredientsArr.length === 0){
-        ingredientsArr = <p>Please Start Adding ingredients!</p>;
+        ingredientsArr = <p>Please Start Adding your ingredients!</p>;
     }
 
     return (

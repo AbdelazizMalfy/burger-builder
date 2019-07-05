@@ -2,19 +2,29 @@ import React, { Component } from 'react'
 
 import Button from '../../UI/Button/Button';
 
-
+import Input from '../../UI/Input/Input';
 import axios from  '../../../axios-orders';
 
 import './ContactData.css';
 
 class ContactData extends Component {
     state = {
-        name: '',
-        email: '',
-        address: {
-            street:'',
-            postalCode:''
-        },
+        orderFrom: {
+            customer: {
+                name:{
+                    elementType:'input',
+                    elementConfig: {
+                        type:'text',
+                        placeholder:'Your Name'
+                    },
+                    value: ''
+                } "Abdelaziz Mohamed Elalfy",
+                street: "Berlin St.",
+                zipCode: "42323",
+                country: "Germany",
+                email: "abdelazizMalfy@gmail.com",
+                deliveryMethod: "fastest"
+            },
         loading: false
     }
 
@@ -52,10 +62,10 @@ class ContactData extends Component {
             <div className="ContactData">
                 <h4>Enter Your Contact Data</h4>
                 <form>
-                    <input className="Input" type="text" name="name" placeholder="Your Name" />
-                    <input className="Input" type="text" name="email" placeholder="Your Email" />
-                    <input className="Input" type="text" name="street" placeholder="Street" />
-                    <input className="Input" type="text" name="postal" placeholder="Postal code" />
+                    <Input inputtype="input" type="text" name="name" placeholder="Your Name" />
+                    <Input inputtype="input" type="text" name="email" placeholder="Your Email" />
+                    <Input inputtype="input" type="text" name="street" placeholder="Street" />
+                    <Input inputtype="input" type="text" name="postal" placeholder="Postal code" />
                     <Button clicked={this.orderHandler} btnType="Success">ORDER</Button>
 
                 </form> 

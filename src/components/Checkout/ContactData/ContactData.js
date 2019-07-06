@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Button from '../../UI/Button/Button';
+ import Button from '../../UI/Button/Button';
 
 import Input from '../../UI/Input/Input';
 import axios from  '../../../axios-orders';
@@ -18,16 +18,54 @@ class ContactData extends Component {
                         placeholder:'Your Name'
                     },
                     value: ''
-                } "Abdelaziz Mohamed Elalfy",
-                street: "Berlin St.",
-                zipCode: "42323",
-                country: "Germany",
-                email: "abdelazizMalfy@gmail.com",
-                deliveryMethod: "fastest"
+                },
+                street: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type:'text',
+                        placeholder: 'Street'
+                    },
+                    value: ''
+                },
+                zipCode:{
+                    elementType: 'input',
+                    elementConfig: {
+                        type:'text',
+                        placeholder: 'ZIP Code'
+                    },
+                    value: ''
+                },
+                country:{
+                    elementType: 'input',
+                    elementConfig: {
+                        type:'text',
+                        placeholder: 'Country'
+                    },
+                    value: ''
+                },
+                email: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type:'email',
+                        placeholder: 'Your Email'
+                    },
+                    value: ''
+                },
+                deliveryMethod: {
+                    elementType: 'select',
+                    elementConfig: {
+                        option : [
+                            {value:'fastest', displayValue: 'Fastest'},
+                            {value:'cheapest', displayValue: 'Cheapest'}
+                    ]
+                    },
+                    value: ''
+                }
             },
         loading: false
     }
-
+    }
+    
     orderHandler = (event) =>{
         event.preventDefault();
         console.log(this.props)
@@ -62,7 +100,7 @@ class ContactData extends Component {
             <div className="ContactData">
                 <h4>Enter Your Contact Data</h4>
                 <form>
-                    <Input inputtype="input" type="text" name="name" placeholder="Your Name" />
+                    <Input elementType="..." elementConfig="..." value  ="..." />
                     <Input inputtype="input" type="text" name="email" placeholder="Your Email" />
                     <Input inputtype="input" type="text" name="street" placeholder="Street" />
                     <Input inputtype="input" type="text" name="postal" placeholder="Postal code" />

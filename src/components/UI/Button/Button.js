@@ -4,7 +4,10 @@ import './Button.css';
 
 function Button(props) {
     return (
-        <button className={`Button ${props.btnType}`} onClick={props.clicked}>
+        <button 
+        disabled={props.disabled}
+        className={`Button ${props.btnType}`} 
+        onClick={props.clicked}>
             {props.children}
         </button>
     )
